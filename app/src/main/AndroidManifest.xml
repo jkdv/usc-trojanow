@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.trojanow" >
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <!-- To access Google+ APIs: -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--
+ To retrieve OAuth 2.0 tokens or invalidate tokens to disconnect a user. This disconnect
+     option is required to comply with the Google+ Sign-In developer policies
+    -->
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <!---->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".gui.account.LoginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
+        </activity>
+        <activity
+            android:name=".gui.account.SplashActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_splash"
+            android:theme="@style/FullscreenTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".sensor.services.EnvironmentSensorService"
+            android:exported="false" >
+        </service>
+        <service
+            android:name=".sharing.services.SharingService"
+            android:exported="false" >
+        </service>
+        <service
+            android:name=".directmessaging.services.DirectMessageService"
+            android:exported="false" >
+        </service>
+        <service
+            android:name=".timeline.services.TimelineService"
+            android:exported="false" >
+        </service>
+
+        <activity
+            android:name=".gui.timeline.AllShownTimelineActivity"
+            android:exported="false"
+            android:label="@string/title_activity_timeline" >
+        </activity>
+        <activity
+            android:name=".gui.timeline.FilteredTimelineActivity"
+            android:exported="false"
+            android:label="@string/title_activity_filtered_timeline" >
+        </activity>
+        <activity
+            android:name=".gui.directmessaging.DirectMessageActivity"
+            android:label="@string/title_activity_direct_message" >
+        </activity>
+        <activity
+            android:name=".gui.sharing.SharingActivity"
+            android:label="@string/title_activity_sharing" >
+
+            <!-- <meta-data -->
+            <!-- android:name="android.support.PARENT_ACTIVITY" -->
+            <!-- android:value=".gui.activities.AllShownTimelineActivity" /> -->
+        </activity>
+        <activity
+            android:name=".gui.account.SignInActivity"
+            android:label="@string/title_activity_sign_in" >
+
+            <!-- <meta-data -->
+            <!-- android:name="android.support.PARENT_ACTIVITY" -->
+            <!-- android:value=".gui.activities.LoginActivity" /> -->
+        </activity>
+        <activity
+            android:name=".gui.account.SignUpActivity"
+            android:label="@string/title_activity_sign_up" >
+
+            <!-- <meta-data -->
+            <!-- android:name="android.support.PARENT_ACTIVITY" -->
+            <!-- android:value=".gui.activities.LoginActivity" /> -->
+        </activity>
+
+        <receiver
+            android:name=".network.NetworkEventReceiver"
+            android:enabled="true"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.trojanow.network.services.action.SIGN_IN" />
+                <action android:name="com.trojanow.network.services.action.SIGN_UP" />
+                <action android:name="com.trojanow.network.services.action.SIGN_OUT" />
+                <action android:name="com.trojanow.network.services.action.READ_RECENT_TIMELINE" />
+                <action android:name="com.trojanow.network.services.action.READ_MY_TIMELINE" />
+                <action android:name="com.trojanow.network.services.action.SHARE_THOUGHT" />
+                <action android:name="com.trojanow.network.services.action.DELETE_THOUGHT" />
+                <action android:name="com.trojanow.network.services.action.UPDATE_THOUGHT" />
+                <action android:name="com.trojanow.network.services.action.UPDATE_ACCOUNT" />
+                <action android:name="com.trojanow.network.services.action.DEACTIVATE_ACCOUNT" />
+                <action android:name="com.trojanow.network.services.action.READ_ALL_USERS" />
+                <action android:name="com.trojanow.network.services.action.READ_CHAT_HISTORY" />
+                <action android:name="com.trojanow.network.services.action.SEND_CHAT" />
+                <action android:name="com.trojanow.network.services.action.DELETE_CHATS" />
+                <action android:name="com.trojanow.network.services.action.READ_WEATHER" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".network.HTTPSenderService"
+            android:exported="false" >
+        </service>
+
+        <activity
+            android:name=".gui.account.AccountSettingsActivity"
+            android:label="@string/title_activity_account_settings" >
+        </activity>
+        <activity
+            android:name=".gui.account.UpdateAccountActivity"
+            android:label="@string/title_activity_update_account" >
+        </activity>
+
+        <service
+            android:name=".account.services.SigningService"
+            android:exported="false" >
+        </service>
+
+        <receiver
+            android:name=".account.events.AccountEventReceiver"
+            android:enabled="true"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.trojanow.account.services.action.SIGN_IN" />
+                <action android:name="com.trojanow.account.services.action.SIGN_UP" />
+                <action android:name="com.trojanow.account.services.action.SIGN_OUT" />
+                <action android:name="com.trojanow.account.services.action.UPDATE_ACCOUNT" />
+                <action android:name="com.trojanow.account.services.action.DEACTIVATE_ACCOUNT" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".timeline.events.TimelineEventReceiver"
+            android:enabled="true"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.trojanow.timeline.services.action.READ_RECENT_TIMELINE" />
+                <action android:name="com.trojanow.timeline.services.action.READ_MY_TIMELINE" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".account.services.AccountSettingService"
+            android:exported="false" >
+        </service>
+
+        <receiver
+            android:name=".directmessaging.events.DirectMessageEventReceiver"
+            android:enabled="true"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.trojanow.directmessaging.services.action.READ_ALL_USERS" />
+                <action android:name="com.trojanow.directmessaging.services.action.READ_CHAT_HISTORY" />
+                <action android:name="com.trojanow.directmessaging.services.action.SEND_CHAT" />
+                <action android:name="com.trojanow.directmessaging.services.action.DELETE_CHATS" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".gui.directmessaging.ChatRoomActivity"
+            android:label="@string/title_activity_chat_room" >
+             <!--<meta-data-->
+             <!--android:name="android.support.PARENT_ACTIVITY"-->
+             <!--android:value=".gui.activities.DirectMessageActivity" />-->
+        </activity>
+
+        <receiver
+            android:name=".sharing.events.SharingEventReceiver"
+            android:enabled="true"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.trojanow.sharing.services.action.SHARE_THOUGHT" />
+                <action android:name="com.trojanow.sharing.services.action.DELETE_THOUGHT" />
+                <action android:name="com.trojanow.sharing.services.action.UPDATE_THOUGHT" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".sensor.events.SensorEventReceiver"
+            android:enabled="true"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.trojanow.sensor.services.action.READ_WEATHER" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

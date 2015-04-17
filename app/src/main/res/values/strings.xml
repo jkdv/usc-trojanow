@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">TrojaNow</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="title_activity_splash">TrojaNow</string>
+    <string name="title_activity_timeline">Timeline</string>
+    <string name="title_activity_notification">Notification</string>
+    <string name="title_activity_filtered_timeline">Filtered Timeline</string>
+    <string name="title_activity_bookmark">Bookmarks</string>
+    <string name="title_activity_direct_message">Direct Message</string>
+    <string name="title_activity_sharing">Sharing</string>
+    <string name="title_activity_login">TrojaNow</string>
+    <string name="title_activity_sign_in">Sign In</string>
+    <string name="title_activity_sign_up">Sign Up</string>
+    <string name="title_activity_account_settings">Account Settings</string>
+    <string name="title_activity_update_account">Update Account</string>
+    <string name="title_activity_chat_room">Chat Room</string>
+
+    <string name="prompt_id">Username</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="prompt_first_name">First name</string>
+    <string name="prompt_last_name">Last name</string>
+    <string name="prompt_contact">Phone number</string>
+    <string name="prompt_confirm">Confirm password</string>
+    <string name="prompt_anonymous">Anonymously</string>
+
+    <string name="button_sign_in">Sign In</string>
+    <string name="button_sign_up">Sign Up</string>
+    <string name="button_sign_out">Sign Out</string>
+    <string name="button_deactivate_account">Deactivate Account</string>
+    <string name="button_update_account">Update Account</string>
+    <string name="button_weather">Weather</string>
+
+    <string name="hello_world">Hello world!</string>
+
+</resources>

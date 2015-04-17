@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.trojanow.gui.timeline.AllShownTimelineActivity">
+    <item android:id="@+id/action_activity_sharing"
+        android:title="@string/menu_sharing"
+        android:icon="@drawable/ic_action_share"
+        android:orderInCategory="99" app:showAsAction="ifRoom" />
+    <item android:id="@+id/action_activity_my_thought"
+        android:title="@string/menu_my_thoughts"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_activity_direct_messaging"
+        android:title="@string/menu_direct_messaging"
+        android:orderInCategory="104" app:showAsAction="never" />
+    <item android:id="@+id/action_activity_account_settings"
+        android:title="@string/menu_account_settings"
+        android:orderInCategory="105" app:showAsAction="never" />
+    <item android:id="@+id/action_sign_out"
+        android:title="@string/menu_sign_out"
+        android:orderInCategory="106" app:showAsAction="never" />
+</menu>

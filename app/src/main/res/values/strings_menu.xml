@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_notification">Notification</string>
+    <string name="menu_bookmarks">Bookmarks</string>
+    <string name="menu_sharing">Thought Sharing</string>
+    <string name="menu_direct_messaging">Direct Messaging</string>
+    <string name="menu_filter">Filter</string>
+    <string name="menu_my_thoughts">My Thoughts</string>
+    <string name="menu_account_settings">Account Settings</string>
+    <string name="menu_sign_out">Sign Out</string>
+    <string name="menu_delete_all_messages">Delete All Messages</string>
+</resources>

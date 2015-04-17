@@ -1,0 +1,9 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.trojanow.gui.sharing.SharingActivity">
+    <item android:id="@+id/action_activity_sharing"
+        android:title="@string/menu_sharing"
+        android:icon="@drawable/ic_action_send"
+        android:orderInCategory="103" app:showAsAction="always" />
+</menu>
